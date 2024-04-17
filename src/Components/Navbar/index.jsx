@@ -12,7 +12,7 @@ const Navbar = () => {
         <nav className='flex justify-between items-center fixed top-0 z-10 w-full py-5 px-8 text-sm font-light'>
             <ul className='flex items-center gap-3'>
                 <li className='font-bold text-lg'>
-                    <NavLink to='/' className={({ isActive }) => isActive ? activeStyle : undefined}>
+                    <NavLink to='/'>
                         Shopi
                     </NavLink>
                 </li>
