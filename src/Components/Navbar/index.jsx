@@ -1,6 +1,7 @@
-import { useContext } from 'react';
+import { React, useContext } from 'react';
 import { ShopingCartContext } from '../../Context';
-import { NavLink } from "react-router-dom";
+import { NavLink } from 'react-router-dom';
+import { IconShopingCart } from '../../Icons/IconShopingCart';
 
 const menufont = 'font-semibold text-md';
 
@@ -71,8 +72,8 @@ const Navbar = () => {
                         Sign In
                     </NavLink>
                 </li>
-                <li>
-                    🛒 {context.count}
+                <li className='flex justify-between items-center gap-1'>
+                    <IconShopingCart colorfill={context.colorfill}/> {context.count}
                 </li>
             </ul>
         </nav>
