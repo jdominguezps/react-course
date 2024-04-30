@@ -10,6 +10,13 @@ const Card = (data) => {
         context.setProductToShow(productDetail);
     };
 
+    const addProductsToCart = (productData) => {
+        context.setCount(context.count + 1);
+        context.setColorfill("green");
+        context.setCartProducts([...context.cartProducts, productData]);
+        console.log('agregando al carrito: ', context.cartProducts);
+    }
+
     return (
         <div
             className='bg-white cursor-pointer w-56 h-60 rounded-lg'
@@ -19,9 +26,8 @@ const Card = (data) => {
                 <img className = 'w-full h-full object-cover rounded-lg' src={data.data.images[0]} alt={data.data.title} />
                 <div className='absolute top-0 right-0 flex justify-center items-center bg-white w-6 h-6 rounded-full m-2 p-1'
                     onClick={(e) => {
+                        addProductsToCart(data.data);
                         e.stopPropagation();
-                        context.setCount(context.count + 1);
-                        context.setColorfill("green");
                         }}>
                     <IconAddCart />
                 </div>
