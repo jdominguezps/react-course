@@ -8,6 +8,10 @@ const menufont = 'font-semibold text-md';
 const Navbar = () => {
     const context = useContext(ShopingCartContext);
     const activeStyle = 'underline underline-offset-4';
+    const openCheckoutSideMenu = ( ) => {
+        context.closeProductDetail();
+        context.openCheckoutSideMenu();
+    };
 
     return (
         <nav className='flex justify-between items-center fixed top-0 z-10 w-full py-5 px-8 text-sm font-light'>
@@ -72,8 +76,10 @@ const Navbar = () => {
                         Sign In
                     </NavLink>
                 </li>
-                <li className='flex justify-between items-center gap-1'>
-                    <IconShopingCart colorfill={context.colorfill}/> {context.count}
+                <li>
+                    <div className='flex justify-between items-center gap-1 cursor-pointer' onClick={() => openCheckoutSideMenu()}>
+                        <IconShopingCart colorfill={context.colorfill}/> {context.count}
+                    </div>
                 </li>
             </ul>
         </nav>
