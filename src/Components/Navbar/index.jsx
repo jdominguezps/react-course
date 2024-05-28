@@ -1,6 +1,7 @@
 import { React, useContext } from 'react';
 import { ShopingCartContext } from '../../Context';
 import { NavLink } from 'react-router-dom';
+import { TotalItems } from '../../Utils/TotalItems';
 import { IconShopingCart } from '../../Icons/IconShopingCart';
 
 const menufont = 'font-semibold text-md';
@@ -78,7 +79,7 @@ const Navbar = () => {
                 </li>
                 <li>
                     <div className='flex justify-between items-center gap-1 cursor-pointer' onClick={() => openCheckoutSideMenu()}>
-                        <IconShopingCart colorfill={context.colorfill}/> {context.count}
+                        <IconShopingCart colorfill={context.colorfill}/><TotalItems />
                     </div>
                 </li>
             </ul>
