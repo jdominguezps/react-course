@@ -5,6 +5,7 @@ import { ShopingCartContext } from '../../Context';
 import { OrderCard } from '../../Components/OrderCard';
 import { TotalPrice } from '../../Utils/TotalPrice';
 import { TotalItems } from '../../Utils/TotalItems';
+import { GetCurrentDate } from '../../Utils/GetCurrentDate';
 import './CheckoutSideMenu.css';
 
 const CheckoutSideMenu = () => {
@@ -22,10 +23,10 @@ const CheckoutSideMenu = () => {
 
     const handleCheckout = () => {
         const orderToAdd = {
-            date: Date,
+            dateOrder: context.cartProducts.currentDate,
             products: context.cartProducts,
-            totalProducts: context.cartProducts.count,
-            totalPrice: context.TotalPrice
+            totalProducts: context.cartProducts.length,
+            totalPrice: context.cartProducts.TotalPrice
         };
 
         context.setOrder([...context.order, orderToAdd]);
@@ -47,6 +48,7 @@ const CheckoutSideMenu = () => {
             <div className='flex justify-between items-center p-6 text-xl font-light bg-blue-100'>
                 <span>
                     <h1 className='font-bold text-center'>RESUMEN</h1>
+                    <h2>Fecha: <GetCurrentDate /></h2>
                     <h2>Total de Articulos: <TotalItems /></h2>
                     <h2>Total a Pagar: $<TotalPrice /></h2>
                     <Link to='/my-orders/last'>
@@ -62,7 +64,7 @@ const CheckoutSideMenu = () => {
                     title={product.title}
                     imageUrl={product.images}
                     price={product.price}
-                    handleDelete={handleDelete}  
+                    handleDelete={handleDelete}
                 />
               ))
             }

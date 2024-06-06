@@ -7,6 +7,7 @@ export const TotalPrice = () => {
     let sumPrice = 0;
 
     context.cartProducts.map(product => (sumPrice += product.price));
+    context.cartProducts.TotalPrice = sumPrice;
     return (
         <span className='font-bold text-2xl'>{sumPrice}</span>
     )
