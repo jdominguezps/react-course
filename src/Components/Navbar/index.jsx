@@ -23,37 +23,55 @@ const Navbar = () => {
                     </NavLink>
                 </li>
                 <li className={menufont}>
-                    <NavLink to='/' className={({ isActive }) => isActive ? activeStyle : undefined}>
+                    <NavLink
+                        to='/'
+                        onClick={() => context.setSearchByCategory('')}
+                        className={({ isActive }) => isActive ? activeStyle : undefined}>
                         All
                     </NavLink>
                 </li>
                 <li>|</li>
                 <li className={menufont}>
-                    <NavLink to='/clothes' className={({ isActive }) => isActive ? activeStyle : undefined}>
+                    <NavLink
+                        to='/clothes'
+                        onClick={() => context.setSearchByCategory('clothes')}
+                        className={({ isActive }) => isActive ? activeStyle : undefined}>
                         Clothes
                     </NavLink>
                 </li>
                 <li>|</li>
                 <li className={menufont}>
-                    <NavLink to='/electronics' className={({ isActive }) => isActive ? activeStyle : undefined}>
+                    <NavLink
+                        to='/electronics'
+                        onClick={() => context.setSearchByCategory('electronics')}
+                        className={({ isActive }) => isActive ? activeStyle : undefined}>
                         Electronics
                     </NavLink>
                 </li>
                 <li>|</li>
                 <li className={menufont}>
-                    <NavLink to='/furnitures' className={({ isActive }) => isActive ? activeStyle : undefined}>
+                    <NavLink
+                        to='/furnitures'
+                        onClick={() => context.setSearchByCategory('furnitures')}
+                        className={({ isActive }) => isActive ? activeStyle : undefined}>
                         Furnitures
                     </NavLink>
                 </li>
                 <li>|</li>
                 <li className={menufont}>
-                    <NavLink to='/toys' className={({ isActive }) => isActive ? activeStyle : undefined}>
+                    <NavLink
+                        to='/toys'
+                        onClick={() => context.setSearchByCategory('toys')}
+                        className={({ isActive }) => isActive ? activeStyle : undefined}>
                         Toys
                     </NavLink>
                 </li>
                 <li>|</li>
                 <li className={menufont}>
-                    <NavLink to='/others' className={({ isActive }) => isActive ? activeStyle : undefined}>
+                    <NavLink
+                        to='/others'
+                        onClick={() => context.setSearchByCategory('others')}
+                        className={({ isActive }) => isActive ? activeStyle : undefined}>
                         Others
                     </NavLink>
                 </li>
