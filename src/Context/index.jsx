@@ -67,7 +67,7 @@ export const ShoppingCartProvider= ({children}) => {
             return items
         };
     };
-    
+
     useEffect(() => {
         if(searchByTitle && !searchByCategory) setFilteredItems(filterBy('BY_TITLE', items, searchByTitle, searchByCategory))
         if(!searchByTitle && searchByCategory) setFilteredItems(filterBy('BY_CATEGORY', items, searchByTitle, searchByCategory))

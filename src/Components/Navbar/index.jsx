@@ -60,17 +60,17 @@ const Navbar = () => {
                 <li>|</li>
                 <li className={menufont}>
                     <NavLink
-                        to='/toys'
-                        onClick={() => context.setSearchByCategory('toys')}
+                        to='/shoes'
+                        onClick={() => context.setSearchByCategory('shoes')}
                         className={({ isActive }) => isActive ? activeStyle : undefined}>
-                        Toys
+                        Shoes
                     </NavLink>
                 </li>
                 <li>|</li>
                 <li className={menufont}>
                     <NavLink
                         to='/others'
-                        onClick={() => context.setSearchByCategory('others')}
+                        onClick={() => context.setSearchByCategory('miscellaneous')}
                         className={({ isActive }) => isActive ? activeStyle : undefined}>
                         Others
                     </NavLink>

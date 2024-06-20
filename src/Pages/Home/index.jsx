@@ -18,7 +18,7 @@ function Home() {
         return <div>No existen Artículos con esa Búsqueda</div>
     } 
   };
-  
+
   return (
       <Layout>
         <div className='flex items-center justify-center relative w-80 mb-4'>
